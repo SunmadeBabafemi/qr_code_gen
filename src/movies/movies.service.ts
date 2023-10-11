@@ -100,8 +100,9 @@ export class MoviesService {
  
   async generateQrCode(): Promise<QrCode | string> {
     try {
-     const code = process.env.BASE_URL_FRONTEND+'/movies?code='+generateRandomString(5)
-
+    //  const code = process.env.BASE_URL_FRONTEND+'/movies?code='+generateRandomString(5)
+     const code = process.env.BASE_URL_FRONTEND+'/movies'
+      
       const randomMovies = await this.findByQRCode()
       // console.log("🚀 ~ file: movies.service.ts:102 ~ MoviesService ~ generateQrCode ~ randomMovies:", randomMovies)
 

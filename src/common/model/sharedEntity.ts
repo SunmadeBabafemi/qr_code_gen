@@ -6,8 +6,8 @@ import {
   } from 'typeorm';
   
   export abstract class SharedEntity {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+    @PrimaryGeneratedColumn()
+    id: number;
   
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     createdOn: Date;
