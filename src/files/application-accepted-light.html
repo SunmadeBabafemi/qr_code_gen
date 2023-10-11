@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Sofia+Sans&display=swap" rel="stylesheet">
+        <style>
+            .guarantor-container {
+                height: fit-content;
+                background-color: #FFF1C7;
+                background-image: url('./assets/Header.svg'); 
+                background-size: 100% 50%;
+                background-repeat: no-repeat;
+                padding: 17.5vh 0;
+                font-family: 'Sofia Sans', sans-serif;
+            }
+
+            .card {
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                width: 40vw;
+                border-radius: 2rem; 
+                /*max-width: 400px;*/
+                margin: auto;
+            }
+
+            .card-body {
+                padding: 1.5rem;
+            }
+
+            .driver-code-details {
+                background-color: #FFF5D8;
+                border-radius: 1rem;
+                width: fit-content;
+                padding: 0.5vh 2vw;
+                margin: 0 0.25vw;
+            }
+
+            .instructions-list-wrap {
+                margin: 5vh 0;
+            }
+
+            .instructions-list {
+                list-style-image: url('./assets/bullet-point.svg');
+            }
+
+            .instructions-list li {
+                margin-top: 2vh;
+            }
+
+            .social-media-links {
+                margin-top: 7.5vh;
+                margin-bottom: 7.5vh;
+                text-align: center;
+            }
+
+            .hub-contact-people {
+                display: flex;
+                overflow-x: scroll;
+                scrollbar-width: thin; /* For Firefox */
+                scrollbar-color: darkgray lightgray; /* For Firefox */
+
+                /* For WebKit based browsers (Chrome, Safari, etc.) */
+                /* You can use ::-webkit-scrollbar to style WebKit scrollbars */
+                /* Note: These styles might not work in future versions of WebKit-based browsers */
+                &::-webkit-scrollbar {
+                    width: 2vw;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: darkgray;
+                    border-radius: 10px; /* Adjust the border-radius as needed */
+                }
+
+                &::-webkit-scrollbar-track {
+                    background-color: lightgray;
+                }
+
+                &::-webkit-scrollbar-button {
+                    display: none; /* Hide directional arrows in WebKit */
+                }
+            }
+
+            .hub-contact-person {
+                background-color: #FFF5D8;
+                border-radius: 1rem;
+                flex: 0 0 70%;
+                max-width: 100%;
+                padding: 0.5vh 2vw;
+                margin: 0 0.25vw;
+            }
+
+            @media screen and (min-width: 320px) and (max-width: 768px) {
+                .guarantor-container {
+                    background-size: 100% 30%;
+                }
+
+                .card {
+                    width: 80vw;
+                }
+
+                .hub-contact-people {
+                    display: flex;
+                    overflow-x: scroll;
+                }
+
+                .hub-contact-person {
+                    background-color: #FFF5D8;
+                    border-radius: 1rem;
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    padding: 0.5vh 2vw;
+                    margin: 0 1vw;
+                }
+            }
+
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+                .guarantor-container {
+                    background-size: 100% 35%;
+                }
+
+                .card {
+                    width: 50vw;
+                }
+            }
+
+            @media screen and (min-width: 1024px) and (max-width: 1440px) {
+                .guarantor-container {
+                    background-size: 100% 35%;
+                }
+            }
+        </style>
+        <!-- <script type="text" src="index.js" defer></script> -->
+    </head>
+
+    <body>
+        <div class="guarantor-container">
+            <div class="card">
+                <div class="card-body">
+
+                    <p><b>Hello, John Doe</b></p>
+
+                    <p>Thank you for registering as a driver on KabuKabu, your application was successful. You can now proceed to inspect your car at any of our hubs</p>
+
+                    <div class="driver-code-details">
+                        <p style="margin-bottom: 0;"><b>KAB-12345</b></p>
+                        <p style="margin-top: 0;"><small>Driver Code</small></p>
+                    </div>
+
+                    <div class="instructions-list-wrap">
+                        <ul class="instructions-list">
+                            <li>The inspection agent will require your driver code to verify your account</li>
+                            <li>Visit the nearest Hub in the next 72 hours to validate and verify your car</li>
+                            <li>You will be charged <b>N2500</b> for inspection fee</li>
+                            <li>Ensure you go to the inspection hubs with all your car documents</li>
+                        </ul>
+                    </div>
+
+                    <div class="hub-details">
+                        <p id="refresh-timer">Refreshing page in: 0 seconds</p>
+                        <p id="refresh-start"></p>
+                        <div class="hub-contact-people">
+
+                            <span class="hub-contact-person">
+                                <img id="refresh-qr-code" src='data:image/png;base64,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'alt="QR Code Image">
+                                <!-- <p style="margin-bottom: 0;"><span><img src="./assets/user.svg" alt="User"></span> <span style="margin-left: 1.5vw;">Emeka Anyanwu</span></p>
+                                <p style="margin-bottom: 0;"><span><img src="./assets/buildings.svg" alt="User"></span> <span style="margin-left: 1.5vw;">3 Ajasin Crescent, Idumota Lagos</span></p>
+                                <p style="margin-bottom: 0;"><span><img src="./assets/clock-alt.svg" alt="User"></span> <span style="margin-left: 1.5vw;">Closes 5pm</span></p>
+                                <p style="margin-bottom: 0;"><span><img src="./assets/phone.svg" alt="User"></span> <span style="margin-left: 1.5vw;">08098887655</span></p> -->
+                            </span>
+                        </div>
+                    </div>            
+
+                    <div style="margin-top: 7.5vh; margin-bottom: 7.5vh;">
+                        <p>Contact <b>kabukabuapp@gmail.com</b> for more enquiry</p>
+                        <p>If you recieved this email in error kindly disregard</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-media-links">
+                <!-- <p><a href="#"><img src="./assets/fb.svg" alt="Facebook"></a> <a href="#"><img src="./assets/twitter.png" alt="Twitter"></a> <a href="#"><img src="./assets/yt.png" alt="YouTube"></a></p> -->
+            </div>
+        </div>
+        <script type="text/javascript" src="index.js" defer></script>
+    </body>
+</html>
